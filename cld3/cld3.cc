@@ -1,20 +1,24 @@
-// #include <string>
-// #include "base.h"
-// #include "nnet_language_identifier.h"
+#include <string>
+#include "base.h"
+#include "nnet_language_identifier.h"
 #include "cld3.h"
 
-// using chrome_lang_id::NNetLanguageIdentifier;
+using chrome_lang_id::NNetLanguageIdentifier;
 
-const Result FindLanguageOfValidUTF8(char *data, int length) {
-  // NNetLanguageIdentifier lang_id();
-  // std::string text(data, length);
-  // NNetLanguageIdentifier::Result res = lang_id.FindLanguageOfValidUTF8(text);
+const Result FindLanguage(char *data, int length) {
+  NNetLanguageIdentifier lang_id(0, 1000);
+  std::string text(data, length);
+  std::cout << text << "\n";
+  const NNetLanguageIdentifier::Result res = lang_id.FindLanguage(text);
   Result out;
-  // char *langcopy = malloc(res.language.length()+1);
-  // strcpy(langcopy, res.language.c_str());
-  // out.language = langcopy;
-  // out.probability = res.probability;
-  // out.is_reliable = res.is_reliable;
-  // out.proportion = res.proportion;
+  std::cout << res.language << "\n";
+  std::cout.flush();
+  char* langcopy = (char*)malloc(res.language.length()+1);
+  strcpy(langcopy, res.language.c_str());
+  out.language = langcopy;
+  out.len_language = res.language.length();
+  out.probability = res.probability;
+  out.is_reliable = res.is_reliable;
+  out.proportion = res.proportion;
   return out;
 }

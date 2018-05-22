@@ -12,11 +12,14 @@ package cld3
 import "C"
 import "unsafe"
 
-// FindLanguageOfValidUTF8 detects the language in a given text. The Result may be FIXME
-func FindLanguageOfValidUTF8(text string) Result {
+const UnknownLang = "und"
+
+// FindLanguageOfValidUTF8 detects the language in a given text. The Result's
+// Language will be "und" if it is unknown.
+func FindLanguage(text string) Result {
 	cs := C.CString(text)
 	defer C.free(unsafe.Pointer(cs))
-	res := C.FindLanguageOfValidUTF8(cs, -1)
+	res := C.FindLanguage(cs, C.int(len(text)))
 	r := Result{}
 	r.Language = C.GoStringN(res.language, res.len_language)
 	r.Probability = float32(res.probability)

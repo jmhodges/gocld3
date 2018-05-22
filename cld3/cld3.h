@@ -16,7 +16,7 @@ extern "C" {
     float proportion;
   } Result;
 
-  const Result FindLanguageOfValidUTF8(char *data, int length);
+  const Result FindLanguage(char *data, int length);
 #ifdef __cplusplus
 }
 #endif
