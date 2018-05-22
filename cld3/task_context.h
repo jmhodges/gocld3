@@ -20,7 +20,7 @@ limitations under the License.
 #include <vector>
 
 #include "base.h"
-#include "cld_3/protos/task_spec.pb.h"
+#include "task_spec.pb.h"
 
 namespace chrome_lang_id {
 

@@ -21,7 +21,7 @@ limitations under the License.
 #include "feature_extractor.h"
 #include "feature_types.h"
 #include "script_span/generated_ulscript.h"
-#include "cld_3/protos/sentence.pb.h"
+#include "sentence.pb.h"
 #include "sentence_features.h"
 #include "task_context.h"
 #include "workspace.h"

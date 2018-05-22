@@ -1,4 +1,4 @@
-//go:generate protoc --cpp_out=./cld_3/protos feature_extractor.proto sentence.proto task_spec.proto
+//go:generate protoc --cpp_out=. feature_extractor.proto sentence.proto task_spec.proto
 
 // Package cld3 implements language detection using the Compact Language Detector v3.
 //
@@ -7,8 +7,7 @@ package cld3
 
 // FIXME LDFLAGS
 
-// #cgo CFLAGS: -I./cld_3/protos
-// #cgo CXXFLAGS: -std=c++11 -I./cld_3/protos
+// #cgo CXXFLAGS: -std=c++11
 // #cgo LDFLAGS: -stdlib=libc++
 // #include <stdlib.h>
 // #include "cld3.h"

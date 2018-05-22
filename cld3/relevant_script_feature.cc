@@ -23,7 +23,7 @@ limitations under the License.
 #include "feature_types.h"
 #include "language_identifier_features.h"
 #include "script_detector.h"
-#include "cld_3/protos/sentence.pb.h"
+#include "sentence.pb.h"
 #include "sentence_features.h"
 #include "task_context.h"
 #include "utils.h"

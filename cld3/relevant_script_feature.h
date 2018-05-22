@@ -17,7 +17,7 @@ limitations under the License.
 #define RELEVANT_SCRIPT_FEATURE_H_
 
 #include "feature_extractor.h"
-#include "cld_3/protos/sentence.pb.h"
+#include "sentence.pb.h"
 #include "sentence_features.h"
 #include "task_context.h"
 #include "workspace.h"

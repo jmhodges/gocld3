@@ -43,7 +43,7 @@ limitations under the License.
 #include <string>
 
 #include "base.h"
-#include "cld_3/protos/feature_extractor.pb.h"
+#include "feature_extractor.pb.h"
 
 namespace chrome_lang_id {
 

@@ -28,7 +28,7 @@ limitations under the License.
 #include "script_span/generated_ulscript.h"
 #include "script_span/getonescriptspan.h"
 #include "script_span/text_processing.h"
-#include "cld_3/protos/sentence.pb.h"
+#include "sentence.pb.h"
 #include "sentence_features.h"
 #include "task_context.h"
 #include "workspace.h"
