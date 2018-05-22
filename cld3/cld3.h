@@ -7,7 +7,7 @@ extern "C" {
 
   typedef struct {
     char* language;
-    size_t len_language;
+    int len_language;
     float probability; // Language probability.
     bool is_reliable;  // Whether the prediction is reliable.
 
