@@ -23,7 +23,7 @@ limitations under the License.
 #include "embedding_network.h"
 #include "lang_id_nn_params.h"
 #include "language_identifier_features.h"
-#include "script_span/getonescriptspan.h"
+#include "getonescriptspan.h"
 #include "sentence.pb.h"
 #include "sentence_features.h"
 #include "task_context.h"

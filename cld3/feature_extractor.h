@@ -45,7 +45,7 @@ limitations under the License.
 #include "feature_extractor.pb.h"
 #include "feature_types.h"
 #include "registry.h"
-#include "script_span/stringpiece.h"
+#include "stringpiece.h"
 #include "task_context.h"
 #include "utils.h"
 #include "workspace.h"

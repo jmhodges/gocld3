@@ -20,7 +20,7 @@ limitations under the License.
 
 #include "feature_extractor.h"
 #include "feature_types.h"
-#include "script_span/generated_ulscript.h"
+#include "generated_ulscript.h"
 #include "sentence.pb.h"
 #include "sentence_features.h"
 #include "task_context.h"

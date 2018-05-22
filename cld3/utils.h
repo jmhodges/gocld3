@@ -23,7 +23,7 @@ limitations under the License.
 #include <vector>
 
 #include "base.h"
-#include "script_span/stringpiece.h"
+#include "stringpiece.h"
 
 namespace chrome_lang_id {
 namespace utils {
