@@ -6,7 +6,7 @@
 using chrome_lang_id::NNetLanguageIdentifier;
 
 const Result FindLanguage(char *data, int length) {
-  NNetLanguageIdentifier lang_id(0, 1000);
+  NNetLanguageIdentifier lang_id(0, 1000); // FIXME why didn't the default constructor work?
   std::string text(data, length);
   std::cout << text << "\n";
   const NNetLanguageIdentifier::Result res = lang_id.FindLanguage(text);
