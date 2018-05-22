@@ -5,10 +5,8 @@
 // This packages includes the relevant sources from the CLD3 project, so it doesn't require any external dependencies. For more information on CLD3, see https://github.com/google/cld3/ .
 package cld3
 
-// FIXME LDFLAGS
-
 // #cgo CXXFLAGS: -std=c++11
-// #cgo LDFLAGS: -stdlib=libc++
+// #cgo pkg-config: protobuf
 // #include <stdlib.h>
 // #include "cld3.h"
 import "C"
