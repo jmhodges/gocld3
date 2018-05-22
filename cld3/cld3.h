@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,7 +17,6 @@ extern "C" {
   } Result;
 
   const Result FindLanguageOfValidUTF8(char *data, int length);
-
 #ifdef __cplusplus
 }
 #endif
