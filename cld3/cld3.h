@@ -6,8 +6,8 @@ extern "C" {
 #endif
 
   typedef struct {
-    char* language;
-    size_t len_language;
+    const char* language;
+    int len_language;
     float probability; // Language probability.
     bool is_reliable;  // Whether the prediction is reliable.
 
@@ -16,7 +16,7 @@ extern "C" {
     float proportion;
   } Result;
 
-  const Result FindLanguageOfValidUTF8(char *data, int length);
+  const Result FindLanguage(char *data, int length);
 #ifdef __cplusplus
 }
 #endif

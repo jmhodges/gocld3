@@ -18,7 +18,7 @@ limitations under the License.
 #include <ctype.h>
 #include <stdlib.h>
 
-#include "script_span/stringpiece.h"
+#include "stringpiece.h"
 
 namespace chrome_lang_id {
 namespace utils {
