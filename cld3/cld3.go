@@ -29,8 +29,8 @@ var (
 
 // NewLanguageIdentifier returns a LanguageIdentifier. minNumBytes is the
 // minimum numbers of bytes to consider in the text before making a decision and
-// maxNumBytes is the maximum of the same. 140 and 700 bytes, respectively, are
-// decent for many cases. LanguageIdentifier must be deallocated explicitly with
+// maxNumBytes is the maximum of the same. Chromium uses 0 and 512, respectively
+// for its i18n work. LanguageIdentifier must be deallocated explicitly with
 // FreeLanguageIdentifier.
 func NewLanguageIdentifier(minNumBytes, maxNumBytes int) (LanguageIdentifier, error) {
 	// We do these checks even though they exist in NNetLanguageIdentifier's

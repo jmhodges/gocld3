@@ -1,13 +1,16 @@
 package cld3
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestOkay(t *testing.T) {
-	foo, err := NewLanguageIdentifier(0, 1000)
+	langId, err := NewLanguageIdentifier(0, 1000)
 	if err != nil {
 		t.Fatal(err)
 	}
-	res := foo.FindLanguage("Hey, this is an english sentence")
+	res := langId.FindLanguage("Hey, this is an english sentence")
 	if res.Language != "en" {
 		t.Errorf("Language: want \"en\", got %#v", res.Language)
 	}
@@ -31,4 +34,17 @@ func TestOkay(t *testing.T) {
 			t.Errorf("error incorrect: want %s, got %s", c.err, err)
 		}
 	}
+}
+
+func ExampleBasic() {
+	langId, err := NewLanguageIdentifier(0, 512)
+	if err != nil {
+		fmt.Println("whoops, couldn't create a new LanguageIdentifier:", err)
+	}
+	res := langId.FindLanguage("Hey, this is an english sentence")
+	if res.IsReliable {
+		fmt.Println("pretty sure we've got text written in", res.Language)
+	}
+	// Output:
+	// pretty sure we've got text written in en
 }
