@@ -15,6 +15,8 @@ import (
 	"unsafe"
 )
 
+// UnknownLang is the value of Result.Language returned if FindLanguage can't
+// determine what language the text was written in.
 const UnknownLang = "und"
 
 type LanguageIdentifier struct {
