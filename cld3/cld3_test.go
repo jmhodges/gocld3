@@ -10,6 +10,7 @@ func TestOkay(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	defer FreeLanguageIdentifier(langId)
 	res := langId.FindLanguage("Hey, this is an english sentence")
 	if res.Language != "en" {
 		t.Errorf("Language: want \"en\", got %#v", res.Language)
@@ -45,6 +46,7 @@ func ExampleBasic() {
 	if res.IsReliable {
 		fmt.Println("pretty sure we've got text written in", res.Language)
 	}
+	FreeLanguageIdentifier(langId)
 	// Output:
 	// pretty sure we've got text written in en
 }
