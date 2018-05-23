@@ -3,4 +3,4 @@ language: go
 addons:
   apt:
     packages:
-      - protobuf
+      - libprotobuf-dev
