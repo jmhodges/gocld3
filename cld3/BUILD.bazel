@@ -1,0 +1,20 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "cld3.cc",
+        "cld3.go",
+        "cld3.h",
+    ],
+    cgo = True,
+    cdeps = ["@com_github_jmhodges_cld3//src:cld3"],
+    importpath = "github.com/jmhodges/gocld3/cld3",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["cld3_test.go"],
+    embed = [":go_default_library"],
+)

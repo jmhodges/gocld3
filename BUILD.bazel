@@ -1,0 +1,9 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_prefix")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+go_prefix("com_github_jmhodges_gocld3")
+
+gazelle(
+    name = "gazelle",
+    prefix = "github.com/jmhodges/gocld3",
+)
