@@ -10,16 +10,54 @@ package cld3
 // #include <stdlib.h>
 // #include "cld3.h"
 import "C"
-import "unsafe"
+import (
+	"errors"
+	"unsafe"
+)
 
 const UnknownLang = "und"
 
-// FindLanguageOfValidUTF8 detects the language in a given text. The Result's
-// Language will be "und" if it is unknown.
-func FindLanguage(text string) Result {
+type LanguageIdentifier struct {
+	li C.CLanguageIdentifier
+}
+
+var (
+	ErrMaxLessThanOrEqToZero  = errors.New("cld3: maxNumBytes passed to NewLanguageIdentifier must be greater than 0")
+	ErrMinLessThanZero        = errors.New("cld3: minNumBytes passed to NewLanguageIdentifier must be greater than or equal to 0")
+	ErrMaxSmallerOrEqualToMin = errors.New("cld3: maxNumBytes passed to NewLanguageIdentifier must be larger than minNumBytes")
+)
+
+// NewLanguageIdentifier returns a LanguageIdentifier. minNumBytes is the
+// minimum numbers of bytes to consider in the text before making a decision and
+// maxNumBytes is the maximum of the same. 140 and 700 bytes, respectively, are
+// decent for many cases. LanguageIdentifier must be deallocated explicitly with
+// FreeLanguageIdentifier.
+func NewLanguageIdentifier(minNumBytes, maxNumBytes int) (LanguageIdentifier, error) {
+	// We do these checks even though they exist in NNetLanguageIdentifier's
+	// constructor because the CLD3_CHECK calls cause inscrutable "illegal
+	// instruction" crashes if they are violated.
+	if maxNumBytes <= 0 {
+		return LanguageIdentifier{}, ErrMaxLessThanOrEqToZero
+	}
+	if minNumBytes < 0 {
+		return LanguageIdentifier{}, ErrMinLessThanZero
+	}
+	if maxNumBytes <= minNumBytes {
+		return LanguageIdentifier{}, ErrMaxSmallerOrEqualToMin
+	}
+	return LanguageIdentifier{C.new_language_identifier(C.int(minNumBytes), C.int(maxNumBytes))}, nil
+}
+
+func FreeLanguageIdentifier(li LanguageIdentifier) {
+	C.free_language_identifier(li.li)
+}
+
+// FindLanguage detects the language in a given text. The Result's
+// Language will be set to the value of the constant UnknownLang if it is unknown.
+func (li LanguageIdentifier) FindLanguage(text string) Result {
 	cs := C.CString(text)
 	defer C.free(unsafe.Pointer(cs))
-	res := C.FindLanguage(cs, C.int(len(text)))
+	res := C.find_language(li.li, cs, C.int(len(text)))
 	r := Result{}
 	r.Language = C.GoStringN(res.language, res.len_language)
 	r.Probability = float32(res.probability)

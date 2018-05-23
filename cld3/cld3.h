@@ -16,7 +16,12 @@ extern "C" {
     float proportion;
   } Result;
 
-  const Result FindLanguage(char *data, int length);
+  typedef void* CLanguageIdentifier;
+
+  CLanguageIdentifier new_language_identifier(int minNumBytes, int maxNumBytes);
+  void free_language_identifier(CLanguageIdentifier);
+  const Result find_language(CLanguageIdentifier li, char *data, int length);
+
 #ifdef __cplusplus
 }
 #endif

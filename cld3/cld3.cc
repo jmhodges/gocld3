@@ -5,10 +5,20 @@
 
 using chrome_lang_id::NNetLanguageIdentifier;
 
-const Result FindLanguage(char *data, int length) {
-  NNetLanguageIdentifier lang_id(0, 1000); // FIXME why didn't the default constructor work?
+CLanguageIdentifier new_language_identifier(int minNumBytes, int maxNumBytes) {
+  NNetLanguageIdentifier* lang_id = new NNetLanguageIdentifier(minNumBytes, maxNumBytes);
+  return (void *)lang_id;
+}
+
+void free_language_identifier(CLanguageIdentifier li) {
+  NNetLanguageIdentifier* lang_id = (NNetLanguageIdentifier*)li;
+  delete lang_id;
+}
+
+const Result find_language(CLanguageIdentifier li, char *data, int length) {
+  NNetLanguageIdentifier* lang_id = (NNetLanguageIdentifier*)li;
   std::string text(data, length);
-  const NNetLanguageIdentifier::Result res = lang_id.FindLanguage(text);
+  const NNetLanguageIdentifier::Result res = lang_id->FindLanguage(text);
   Result out;
   // These strings are statically allocated, so we can do this c_str() without
   // worrying about them going off the stack.
