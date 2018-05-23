@@ -9,4 +9,17 @@ require any external dependencies. For more information on CLD3, see [https://gi
 
 Install with `go get github.com/jmhodges/gocld3/cld3`.
 
-Documentation and examples are available on [GoDoc](https://godoc.org/github.com/jmhodges/gocld3/cld3).
+Documentation is available on [GoDoc](https://godoc.org/github.com/jmhodges/gocld3/cld3).
+
+### Example
+
+```go
+	langId, err := NewLanguageIdentifier(0, 512)
+	if err != nil {
+		fmt.Println("whoops, couldn't create a new LanguageIdentifier:", err)
+	}
+	res := langId.FindLanguage("Hey, this is an english sentence")
+	if res.IsReliable {
+		fmt.Println("pretty sure we've got text written in", res.Language)
+	}
+  ```
