@@ -23,4 +23,8 @@ Documentation is available on [GoDoc](https://godoc.org/github.com/jmhodges/gocl
 	if res.IsReliable {
 		fmt.Println("pretty sure we've got text written in", res.Language)
 	}
+	res = langId.FindLanguage("Muy bien, gracias.")
+	if res.IsReliable {
+		fmt.Println("ah, and this one is", res.Language)
+	}
   ```

@@ -46,7 +46,12 @@ func ExampleBasic() {
 	if res.IsReliable {
 		fmt.Println("pretty sure we've got text written in", res.Language)
 	}
+	res = langId.FindLanguage("Muy bien, gracias.")
+	if res.IsReliable {
+		fmt.Println("ah, and this one is", res.Language)
+	}
 	FreeLanguageIdentifier(langId)
 	// Output:
 	// pretty sure we've got text written in en
+	// ah, and this one is es
 }
