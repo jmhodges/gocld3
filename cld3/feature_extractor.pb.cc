@@ -7,7 +7,6 @@
 
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/port.h>
-#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
@@ -16,6 +15,11 @@
 #include "third_party/protobuf/version.h"
 #endif
 // @@protoc_insertion_point(includes)
+
+namespace protobuf_feature_5fextractor_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_feature_5fextractor_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Parameter;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_feature_5fextractor_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_FeatureFunctionDescriptor;
+}  // namespace protobuf_feature_5fextractor_2eproto
 namespace chrome_lang_id {
 class ParameterDefaultTypeInternal {
  public:
@@ -34,14 +38,9 @@ class FeatureExtractorDescriptorDefaultTypeInternal {
 } _FeatureExtractorDescriptor_default_instance_;
 }  // namespace chrome_lang_id
 namespace protobuf_feature_5fextractor_2eproto {
-void InitDefaultsParameterImpl() {
+static void InitDefaultsParameter() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::chrome_lang_id::_Parameter_default_instance_;
     new (ptr) ::chrome_lang_id::Parameter();
@@ -50,20 +49,12 @@ void InitDefaultsParameterImpl() {
   ::chrome_lang_id::Parameter::InitAsDefaultInstance();
 }
 
-void InitDefaultsParameter() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsParameterImpl);
-}
+::google::protobuf::internal::SCCInfo<0> scc_info_Parameter =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsParameter}, {}};
 
-void InitDefaultsFeatureFunctionDescriptorImpl() {
+static void InitDefaultsFeatureFunctionDescriptor() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_feature_5fextractor_2eproto::InitDefaultsParameter();
   {
     void* ptr = &::chrome_lang_id::_FeatureFunctionDescriptor_default_instance_;
     new (ptr) ::chrome_lang_id::FeatureFunctionDescriptor();
@@ -72,20 +63,13 @@ void InitDefaultsFeatureFunctionDescriptorImpl() {
   ::chrome_lang_id::FeatureFunctionDescriptor::InitAsDefaultInstance();
 }
 
-void InitDefaultsFeatureFunctionDescriptor() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsFeatureFunctionDescriptorImpl);
-}
+::google::protobuf::internal::SCCInfo<1> scc_info_FeatureFunctionDescriptor =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsFeatureFunctionDescriptor}, {
+      &protobuf_feature_5fextractor_2eproto::scc_info_Parameter.base,}};
 
-void InitDefaultsFeatureExtractorDescriptorImpl() {
+static void InitDefaultsFeatureExtractorDescriptor() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_feature_5fextractor_2eproto::InitDefaultsFeatureFunctionDescriptor();
   {
     void* ptr = &::chrome_lang_id::_FeatureExtractorDescriptor_default_instance_;
     new (ptr) ::chrome_lang_id::FeatureExtractorDescriptor();
@@ -94,9 +78,14 @@ void InitDefaultsFeatureExtractorDescriptorImpl() {
   ::chrome_lang_id::FeatureExtractorDescriptor::InitAsDefaultInstance();
 }
 
-void InitDefaultsFeatureExtractorDescriptor() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsFeatureExtractorDescriptorImpl);
+::google::protobuf::internal::SCCInfo<1> scc_info_FeatureExtractorDescriptor =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsFeatureExtractorDescriptor}, {
+      &protobuf_feature_5fextractor_2eproto::scc_info_FeatureFunctionDescriptor.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Parameter.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_FeatureFunctionDescriptor.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_FeatureExtractorDescriptor.base);
 }
 
 }  // namespace protobuf_feature_5fextractor_2eproto
@@ -113,17 +102,15 @@ const int Parameter::kValueFieldNumber;
 
 Parameter::Parameter()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_feature_5fextractor_2eproto::InitDefaultsParameter();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_feature_5fextractor_2eproto::scc_info_Parameter.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.Parameter)
 }
 Parameter::Parameter(const Parameter& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_name()) {
@@ -137,7 +124,6 @@ Parameter::Parameter(const Parameter& from)
 }
 
 void Parameter::SharedCtor() {
-  _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -153,22 +139,13 @@ void Parameter::SharedDtor() {
 }
 
 void Parameter::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const Parameter& Parameter::default_instance() {
-  ::protobuf_feature_5fextractor_2eproto::InitDefaultsParameter();
+  ::google::protobuf::internal::InitSCC(&protobuf_feature_5fextractor_2eproto::scc_info_Parameter.base);
   return *internal_default_instance();
 }
 
-Parameter* Parameter::New(::google::protobuf::Arena* arena) const {
-  Parameter* n = new Parameter;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void Parameter::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.Parameter)
@@ -179,12 +156,10 @@ void Parameter::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*name_.UnsafeRawStringPointer())->clear();
+      name_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!value_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*value_.UnsafeRawStringPointer())->clear();
+      value_.ClearNonDefaultToEmptyNoArena();
     }
   }
   _has_bits_.Clear();
@@ -203,7 +178,7 @@ bool Parameter::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.Parameter)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -298,9 +273,7 @@ size_t Parameter::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -346,11 +319,12 @@ void Parameter::Swap(Parameter* other) {
 }
 void Parameter::InternalSwap(Parameter* other) {
   using std::swap;
-  name_.Swap(&other->name_);
-  value_.Swap(&other->value_);
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  value_.Swap(&other->value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string Parameter::GetTypeName() const {
@@ -372,9 +346,8 @@ const int FeatureFunctionDescriptor::kFeatureFieldNumber;
 
 FeatureFunctionDescriptor::FeatureFunctionDescriptor()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_feature_5fextractor_2eproto::InitDefaultsFeatureFunctionDescriptor();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_feature_5fextractor_2eproto::scc_info_FeatureFunctionDescriptor.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.FeatureFunctionDescriptor)
 }
@@ -382,7 +355,6 @@ FeatureFunctionDescriptor::FeatureFunctionDescriptor(const FeatureFunctionDescri
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
       parameter_(from.parameter_),
       feature_(from.feature_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -399,7 +371,6 @@ FeatureFunctionDescriptor::FeatureFunctionDescriptor(const FeatureFunctionDescri
 }
 
 void FeatureFunctionDescriptor::SharedCtor() {
-  _cached_size_ = 0;
   type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   argument_ = 0;
@@ -416,22 +387,13 @@ void FeatureFunctionDescriptor::SharedDtor() {
 }
 
 void FeatureFunctionDescriptor::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const FeatureFunctionDescriptor& FeatureFunctionDescriptor::default_instance() {
-  ::protobuf_feature_5fextractor_2eproto::InitDefaultsFeatureFunctionDescriptor();
+  ::google::protobuf::internal::InitSCC(&protobuf_feature_5fextractor_2eproto::scc_info_FeatureFunctionDescriptor.base);
   return *internal_default_instance();
 }
 
-FeatureFunctionDescriptor* FeatureFunctionDescriptor::New(::google::protobuf::Arena* arena) const {
-  FeatureFunctionDescriptor* n = new FeatureFunctionDescriptor;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void FeatureFunctionDescriptor::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.FeatureFunctionDescriptor)
@@ -444,12 +406,10 @@ void FeatureFunctionDescriptor::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!type_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*type_.UnsafeRawStringPointer())->clear();
+      type_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*name_.UnsafeRawStringPointer())->clear();
+      name_.ClearNonDefaultToEmptyNoArena();
     }
   }
   argument_ = 0;
@@ -469,7 +429,7 @@ bool FeatureFunctionDescriptor::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.FeatureFunctionDescriptor)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -515,7 +475,8 @@ bool FeatureFunctionDescriptor::MergePartialFromCodedStream(
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_parameter()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_parameter()));
         } else {
           goto handle_unusual;
         }
@@ -526,7 +487,8 @@ bool FeatureFunctionDescriptor::MergePartialFromCodedStream(
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_feature()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_feature()));
         } else {
           goto handle_unusual;
         }
@@ -581,14 +543,18 @@ void FeatureFunctionDescriptor::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->parameter_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
-      4, this->parameter(static_cast<int>(i)), output);
+      4,
+      this->parameter(static_cast<int>(i)),
+      output);
   }
 
   // repeated .chrome_lang_id.FeatureFunctionDescriptor feature = 7;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->feature_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
-      7, this->feature(static_cast<int>(i)), output);
+      7,
+      this->feature(static_cast<int>(i)),
+      output);
   }
 
   output->WriteRaw(_internal_metadata_.unknown_fields().data(),
@@ -647,9 +613,7 @@ size_t FeatureFunctionDescriptor::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -703,14 +667,15 @@ void FeatureFunctionDescriptor::Swap(FeatureFunctionDescriptor* other) {
 }
 void FeatureFunctionDescriptor::InternalSwap(FeatureFunctionDescriptor* other) {
   using std::swap;
-  parameter_.InternalSwap(&other->parameter_);
-  feature_.InternalSwap(&other->feature_);
-  type_.Swap(&other->type_);
-  name_.Swap(&other->name_);
+  CastToBase(&parameter_)->InternalSwap(CastToBase(&other->parameter_));
+  CastToBase(&feature_)->InternalSwap(CastToBase(&other->feature_));
+  type_.Swap(&other->type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(argument_, other->argument_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string FeatureFunctionDescriptor::GetTypeName() const {
@@ -728,9 +693,8 @@ const int FeatureExtractorDescriptor::kFeatureFieldNumber;
 
 FeatureExtractorDescriptor::FeatureExtractorDescriptor()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_feature_5fextractor_2eproto::InitDefaultsFeatureExtractorDescriptor();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_feature_5fextractor_2eproto::scc_info_FeatureExtractorDescriptor.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.FeatureExtractorDescriptor)
 }
@@ -738,14 +702,12 @@ FeatureExtractorDescriptor::FeatureExtractorDescriptor(const FeatureExtractorDes
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
       feature_(from.feature_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:chrome_lang_id.FeatureExtractorDescriptor)
 }
 
 void FeatureExtractorDescriptor::SharedCtor() {
-  _cached_size_ = 0;
 }
 
 FeatureExtractorDescriptor::~FeatureExtractorDescriptor() {
@@ -757,22 +719,13 @@ void FeatureExtractorDescriptor::SharedDtor() {
 }
 
 void FeatureExtractorDescriptor::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const FeatureExtractorDescriptor& FeatureExtractorDescriptor::default_instance() {
-  ::protobuf_feature_5fextractor_2eproto::InitDefaultsFeatureExtractorDescriptor();
+  ::google::protobuf::internal::InitSCC(&protobuf_feature_5fextractor_2eproto::scc_info_FeatureExtractorDescriptor.base);
   return *internal_default_instance();
 }
 
-FeatureExtractorDescriptor* FeatureExtractorDescriptor::New(::google::protobuf::Arena* arena) const {
-  FeatureExtractorDescriptor* n = new FeatureExtractorDescriptor;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void FeatureExtractorDescriptor::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.FeatureExtractorDescriptor)
@@ -797,7 +750,7 @@ bool FeatureExtractorDescriptor::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.FeatureExtractorDescriptor)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -805,7 +758,8 @@ bool FeatureExtractorDescriptor::MergePartialFromCodedStream(
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_feature()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_feature()));
         } else {
           goto handle_unusual;
         }
@@ -842,7 +796,9 @@ void FeatureExtractorDescriptor::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->feature_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
-      1, this->feature(static_cast<int>(i)), output);
+      1,
+      this->feature(static_cast<int>(i)),
+      output);
   }
 
   output->WriteRaw(_internal_metadata_.unknown_fields().data(),
@@ -868,9 +824,7 @@ size_t FeatureExtractorDescriptor::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -907,10 +861,9 @@ void FeatureExtractorDescriptor::Swap(FeatureExtractorDescriptor* other) {
 }
 void FeatureExtractorDescriptor::InternalSwap(FeatureExtractorDescriptor* other) {
   using std::swap;
-  feature_.InternalSwap(&other->feature_);
+  CastToBase(&feature_)->InternalSwap(CastToBase(&other->feature_));
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string FeatureExtractorDescriptor::GetTypeName() const {
@@ -920,5 +873,18 @@ void FeatureExtractorDescriptor::InternalSwap(FeatureExtractorDescriptor* other)
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace chrome_lang_id
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::Parameter* Arena::CreateMaybeMessage< ::chrome_lang_id::Parameter >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::Parameter >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::FeatureFunctionDescriptor* Arena::CreateMaybeMessage< ::chrome_lang_id::FeatureFunctionDescriptor >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::FeatureFunctionDescriptor >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::FeatureExtractorDescriptor* Arena::CreateMaybeMessage< ::chrome_lang_id::FeatureExtractorDescriptor >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::FeatureExtractorDescriptor >(arena);
+}
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
