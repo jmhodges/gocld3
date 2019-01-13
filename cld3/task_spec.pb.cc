@@ -7,7 +7,6 @@
 
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/port.h>
-#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
@@ -16,6 +15,13 @@
 #include "third_party/protobuf/version.h"
 #endif
 // @@protoc_insertion_point(includes)
+
+namespace protobuf_task_5fspec_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_task_5fspec_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TaskInput_Part;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_task_5fspec_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TaskOutput;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_task_5fspec_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TaskSpec_Parameter;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_task_5fspec_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskInput;
+}  // namespace protobuf_task_5fspec_2eproto
 namespace chrome_lang_id {
 class TaskInput_PartDefaultTypeInternal {
  public:
@@ -44,14 +50,9 @@ class TaskSpecDefaultTypeInternal {
 } _TaskSpec_default_instance_;
 }  // namespace chrome_lang_id
 namespace protobuf_task_5fspec_2eproto {
-void InitDefaultsTaskInput_PartImpl() {
+static void InitDefaultsTaskInput_Part() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::chrome_lang_id::_TaskInput_Part_default_instance_;
     new (ptr) ::chrome_lang_id::TaskInput_Part();
@@ -60,20 +61,12 @@ void InitDefaultsTaskInput_PartImpl() {
   ::chrome_lang_id::TaskInput_Part::InitAsDefaultInstance();
 }
 
-void InitDefaultsTaskInput_Part() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTaskInput_PartImpl);
-}
+::google::protobuf::internal::SCCInfo<0> scc_info_TaskInput_Part =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTaskInput_Part}, {}};
 
-void InitDefaultsTaskInputImpl() {
+static void InitDefaultsTaskInput() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_task_5fspec_2eproto::InitDefaultsTaskInput_Part();
   {
     void* ptr = &::chrome_lang_id::_TaskInput_default_instance_;
     new (ptr) ::chrome_lang_id::TaskInput();
@@ -82,19 +75,13 @@ void InitDefaultsTaskInputImpl() {
   ::chrome_lang_id::TaskInput::InitAsDefaultInstance();
 }
 
-void InitDefaultsTaskInput() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTaskInputImpl);
-}
+::google::protobuf::internal::SCCInfo<1> scc_info_TaskInput =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTaskInput}, {
+      &protobuf_task_5fspec_2eproto::scc_info_TaskInput_Part.base,}};
 
-void InitDefaultsTaskOutputImpl() {
+static void InitDefaultsTaskOutput() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::chrome_lang_id::_TaskOutput_default_instance_;
     new (ptr) ::chrome_lang_id::TaskOutput();
@@ -103,19 +90,12 @@ void InitDefaultsTaskOutputImpl() {
   ::chrome_lang_id::TaskOutput::InitAsDefaultInstance();
 }
 
-void InitDefaultsTaskOutput() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTaskOutputImpl);
-}
+::google::protobuf::internal::SCCInfo<0> scc_info_TaskOutput =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTaskOutput}, {}};
 
-void InitDefaultsTaskSpec_ParameterImpl() {
+static void InitDefaultsTaskSpec_Parameter() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::chrome_lang_id::_TaskSpec_Parameter_default_instance_;
     new (ptr) ::chrome_lang_id::TaskSpec_Parameter();
@@ -124,22 +104,12 @@ void InitDefaultsTaskSpec_ParameterImpl() {
   ::chrome_lang_id::TaskSpec_Parameter::InitAsDefaultInstance();
 }
 
-void InitDefaultsTaskSpec_Parameter() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTaskSpec_ParameterImpl);
-}
+::google::protobuf::internal::SCCInfo<0> scc_info_TaskSpec_Parameter =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTaskSpec_Parameter}, {}};
 
-void InitDefaultsTaskSpecImpl() {
+static void InitDefaultsTaskSpec() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_task_5fspec_2eproto::InitDefaultsTaskSpec_Parameter();
-  protobuf_task_5fspec_2eproto::InitDefaultsTaskInput();
-  protobuf_task_5fspec_2eproto::InitDefaultsTaskOutput();
   {
     void* ptr = &::chrome_lang_id::_TaskSpec_default_instance_;
     new (ptr) ::chrome_lang_id::TaskSpec();
@@ -148,9 +118,18 @@ void InitDefaultsTaskSpecImpl() {
   ::chrome_lang_id::TaskSpec::InitAsDefaultInstance();
 }
 
-void InitDefaultsTaskSpec() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTaskSpecImpl);
+::google::protobuf::internal::SCCInfo<3> scc_info_TaskSpec =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsTaskSpec}, {
+      &protobuf_task_5fspec_2eproto::scc_info_TaskSpec_Parameter.base,
+      &protobuf_task_5fspec_2eproto::scc_info_TaskInput.base,
+      &protobuf_task_5fspec_2eproto::scc_info_TaskOutput.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_TaskInput_Part.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TaskInput.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TaskOutput.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TaskSpec_Parameter.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_TaskSpec.base);
 }
 
 }  // namespace protobuf_task_5fspec_2eproto
@@ -168,17 +147,15 @@ const int TaskInput_Part::kRecordFormatFieldNumber;
 
 TaskInput_Part::TaskInput_Part()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_task_5fspec_2eproto::InitDefaultsTaskInput_Part();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_task_5fspec_2eproto::scc_info_TaskInput_Part.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.TaskInput.Part)
 }
 TaskInput_Part::TaskInput_Part(const TaskInput_Part& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   file_pattern_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_file_pattern()) {
@@ -196,7 +173,6 @@ TaskInput_Part::TaskInput_Part(const TaskInput_Part& from)
 }
 
 void TaskInput_Part::SharedCtor() {
-  _cached_size_ = 0;
   file_pattern_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   file_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   record_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -214,22 +190,13 @@ void TaskInput_Part::SharedDtor() {
 }
 
 void TaskInput_Part::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const TaskInput_Part& TaskInput_Part::default_instance() {
-  ::protobuf_task_5fspec_2eproto::InitDefaultsTaskInput_Part();
+  ::google::protobuf::internal::InitSCC(&protobuf_task_5fspec_2eproto::scc_info_TaskInput_Part.base);
   return *internal_default_instance();
 }
 
-TaskInput_Part* TaskInput_Part::New(::google::protobuf::Arena* arena) const {
-  TaskInput_Part* n = new TaskInput_Part;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void TaskInput_Part::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.TaskInput.Part)
@@ -240,16 +207,13 @@ void TaskInput_Part::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 7u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!file_pattern_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*file_pattern_.UnsafeRawStringPointer())->clear();
+      file_pattern_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!file_format_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*file_format_.UnsafeRawStringPointer())->clear();
+      file_format_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(!record_format_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*record_format_.UnsafeRawStringPointer())->clear();
+      record_format_.ClearNonDefaultToEmptyNoArena();
     }
   }
   _has_bits_.Clear();
@@ -268,7 +232,7 @@ bool TaskInput_Part::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.TaskInput.Part)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -391,9 +355,7 @@ size_t TaskInput_Part::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -443,12 +405,14 @@ void TaskInput_Part::Swap(TaskInput_Part* other) {
 }
 void TaskInput_Part::InternalSwap(TaskInput_Part* other) {
   using std::swap;
-  file_pattern_.Swap(&other->file_pattern_);
-  file_format_.Swap(&other->file_format_);
-  record_format_.Swap(&other->record_format_);
+  file_pattern_.Swap(&other->file_pattern_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  file_format_.Swap(&other->file_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  record_format_.Swap(&other->record_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string TaskInput_Part::GetTypeName() const {
@@ -471,9 +435,8 @@ const int TaskInput::kPartFieldNumber;
 
 TaskInput::TaskInput()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_task_5fspec_2eproto::InitDefaultsTaskInput();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_task_5fspec_2eproto::scc_info_TaskInput.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.TaskInput)
 }
@@ -481,7 +444,6 @@ TaskInput::TaskInput(const TaskInput& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
       file_format_(from.file_format_),
       record_format_(from.record_format_),
       part_(from.part_) {
@@ -499,7 +461,6 @@ TaskInput::TaskInput(const TaskInput& from)
 }
 
 void TaskInput::SharedCtor() {
-  _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   creator_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   multi_file_ = false;
@@ -516,22 +477,13 @@ void TaskInput::SharedDtor() {
 }
 
 void TaskInput::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const TaskInput& TaskInput::default_instance() {
-  ::protobuf_task_5fspec_2eproto::InitDefaultsTaskInput();
+  ::google::protobuf::internal::InitSCC(&protobuf_task_5fspec_2eproto::scc_info_TaskInput.base);
   return *internal_default_instance();
 }
 
-TaskInput* TaskInput::New(::google::protobuf::Arena* arena) const {
-  TaskInput* n = new TaskInput;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void TaskInput::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.TaskInput)
@@ -545,12 +497,10 @@ void TaskInput::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*name_.UnsafeRawStringPointer())->clear();
+      name_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!creator_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*creator_.UnsafeRawStringPointer())->clear();
+      creator_.ClearNonDefaultToEmptyNoArena();
     }
   }
   multi_file_ = false;
@@ -570,7 +520,7 @@ bool TaskInput::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.TaskInput)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -707,7 +657,9 @@ void TaskInput::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->part_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteGroup(
-      6, this->part(static_cast<int>(i)), output);
+      6,
+      this->part(static_cast<int>(i)),
+      output);
   }
 
   output->WriteRaw(_internal_metadata_.unknown_fields().data(),
@@ -769,9 +721,7 @@ size_t TaskInput::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -825,15 +775,16 @@ void TaskInput::Swap(TaskInput* other) {
 }
 void TaskInput::InternalSwap(TaskInput* other) {
   using std::swap;
-  file_format_.InternalSwap(&other->file_format_);
-  record_format_.InternalSwap(&other->record_format_);
-  part_.InternalSwap(&other->part_);
-  name_.Swap(&other->name_);
-  creator_.Swap(&other->creator_);
+  file_format_.InternalSwap(CastToBase(&other->file_format_));
+  record_format_.InternalSwap(CastToBase(&other->record_format_));
+  CastToBase(&part_)->InternalSwap(CastToBase(&other->part_));
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  creator_.Swap(&other->creator_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(multi_file_, other->multi_file_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string TaskInput::GetTypeName() const {
@@ -856,17 +807,15 @@ const int TaskOutput::kFileExtensionFieldNumber;
 
 TaskOutput::TaskOutput()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_task_5fspec_2eproto::InitDefaultsTaskOutput();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_task_5fspec_2eproto::scc_info_TaskOutput.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.TaskOutput)
 }
 TaskOutput::TaskOutput(const TaskOutput& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_name()) {
@@ -893,7 +842,6 @@ TaskOutput::TaskOutput(const TaskOutput& from)
 }
 
 void TaskOutput::SharedCtor() {
-  _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   file_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   record_format_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -916,22 +864,13 @@ void TaskOutput::SharedDtor() {
 }
 
 void TaskOutput::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const TaskOutput& TaskOutput::default_instance() {
-  ::protobuf_task_5fspec_2eproto::InitDefaultsTaskOutput();
+  ::google::protobuf::internal::InitSCC(&protobuf_task_5fspec_2eproto::scc_info_TaskOutput.base);
   return *internal_default_instance();
 }
 
-TaskOutput* TaskOutput::New(::google::protobuf::Arena* arena) const {
-  TaskOutput* n = new TaskOutput;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void TaskOutput::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.TaskOutput)
@@ -942,24 +881,19 @@ void TaskOutput::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 31u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*name_.UnsafeRawStringPointer())->clear();
+      name_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!file_format_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*file_format_.UnsafeRawStringPointer())->clear();
+      file_format_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(!record_format_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*record_format_.UnsafeRawStringPointer())->clear();
+      record_format_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000008u) {
-      GOOGLE_DCHECK(!file_base_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*file_base_.UnsafeRawStringPointer())->clear();
+      file_base_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000010u) {
-      GOOGLE_DCHECK(!file_extension_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*file_extension_.UnsafeRawStringPointer())->clear();
+      file_extension_.ClearNonDefaultToEmptyNoArena();
     }
   }
   shards_ = 0;
@@ -979,7 +913,7 @@ bool TaskOutput::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.TaskOutput)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1174,9 +1108,7 @@ size_t TaskOutput::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -1239,15 +1171,19 @@ void TaskOutput::Swap(TaskOutput* other) {
 }
 void TaskOutput::InternalSwap(TaskOutput* other) {
   using std::swap;
-  name_.Swap(&other->name_);
-  file_format_.Swap(&other->file_format_);
-  record_format_.Swap(&other->record_format_);
-  file_base_.Swap(&other->file_base_);
-  file_extension_.Swap(&other->file_extension_);
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  file_format_.Swap(&other->file_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  record_format_.Swap(&other->record_format_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  file_base_.Swap(&other->file_base_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  file_extension_.Swap(&other->file_extension_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(shards_, other->shards_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string TaskOutput::GetTypeName() const {
@@ -1266,17 +1202,15 @@ const int TaskSpec_Parameter::kValueFieldNumber;
 
 TaskSpec_Parameter::TaskSpec_Parameter()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_task_5fspec_2eproto::InitDefaultsTaskSpec_Parameter();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_task_5fspec_2eproto::scc_info_TaskSpec_Parameter.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.TaskSpec.Parameter)
 }
 TaskSpec_Parameter::TaskSpec_Parameter(const TaskSpec_Parameter& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_name()) {
@@ -1290,7 +1224,6 @@ TaskSpec_Parameter::TaskSpec_Parameter(const TaskSpec_Parameter& from)
 }
 
 void TaskSpec_Parameter::SharedCtor() {
-  _cached_size_ = 0;
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1306,22 +1239,13 @@ void TaskSpec_Parameter::SharedDtor() {
 }
 
 void TaskSpec_Parameter::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const TaskSpec_Parameter& TaskSpec_Parameter::default_instance() {
-  ::protobuf_task_5fspec_2eproto::InitDefaultsTaskSpec_Parameter();
+  ::google::protobuf::internal::InitSCC(&protobuf_task_5fspec_2eproto::scc_info_TaskSpec_Parameter.base);
   return *internal_default_instance();
 }
 
-TaskSpec_Parameter* TaskSpec_Parameter::New(::google::protobuf::Arena* arena) const {
-  TaskSpec_Parameter* n = new TaskSpec_Parameter;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void TaskSpec_Parameter::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.TaskSpec.Parameter)
@@ -1332,12 +1256,10 @@ void TaskSpec_Parameter::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*name_.UnsafeRawStringPointer())->clear();
+      name_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!value_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*value_.UnsafeRawStringPointer())->clear();
+      value_.ClearNonDefaultToEmptyNoArena();
     }
   }
   _has_bits_.Clear();
@@ -1356,7 +1278,7 @@ bool TaskSpec_Parameter::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.TaskSpec.Parameter)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1451,9 +1373,7 @@ size_t TaskSpec_Parameter::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -1500,11 +1420,12 @@ void TaskSpec_Parameter::Swap(TaskSpec_Parameter* other) {
 }
 void TaskSpec_Parameter::InternalSwap(TaskSpec_Parameter* other) {
   using std::swap;
-  name_.Swap(&other->name_);
-  value_.Swap(&other->value_);
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  value_.Swap(&other->value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string TaskSpec_Parameter::GetTypeName() const {
@@ -1526,9 +1447,8 @@ const int TaskSpec::kOutputFieldNumber;
 
 TaskSpec::TaskSpec()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_task_5fspec_2eproto::InitDefaultsTaskSpec();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_task_5fspec_2eproto::scc_info_TaskSpec.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.TaskSpec)
 }
@@ -1536,7 +1456,6 @@ TaskSpec::TaskSpec(const TaskSpec& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
       parameter_(from.parameter_),
       input_(from.input_),
       output_(from.output_) {
@@ -1553,7 +1472,6 @@ TaskSpec::TaskSpec(const TaskSpec& from)
 }
 
 void TaskSpec::SharedCtor() {
-  _cached_size_ = 0;
   task_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   task_type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1569,22 +1487,13 @@ void TaskSpec::SharedDtor() {
 }
 
 void TaskSpec::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const TaskSpec& TaskSpec::default_instance() {
-  ::protobuf_task_5fspec_2eproto::InitDefaultsTaskSpec();
+  ::google::protobuf::internal::InitSCC(&protobuf_task_5fspec_2eproto::scc_info_TaskSpec.base);
   return *internal_default_instance();
 }
 
-TaskSpec* TaskSpec::New(::google::protobuf::Arena* arena) const {
-  TaskSpec* n = new TaskSpec;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void TaskSpec::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.TaskSpec)
@@ -1598,12 +1507,10 @@ void TaskSpec::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!task_name_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*task_name_.UnsafeRawStringPointer())->clear();
+      task_name_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!task_type_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*task_type_.UnsafeRawStringPointer())->clear();
+      task_type_.ClearNonDefaultToEmptyNoArena();
     }
   }
   _has_bits_.Clear();
@@ -1622,7 +1529,7 @@ bool TaskSpec::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.TaskSpec)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -1665,7 +1572,8 @@ bool TaskSpec::MergePartialFromCodedStream(
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_input()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_input()));
         } else {
           goto handle_unusual;
         }
@@ -1676,7 +1584,8 @@ bool TaskSpec::MergePartialFromCodedStream(
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_output()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_output()));
         } else {
           goto handle_unusual;
         }
@@ -1726,21 +1635,27 @@ void TaskSpec::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->parameter_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteGroup(
-      3, this->parameter(static_cast<int>(i)), output);
+      3,
+      this->parameter(static_cast<int>(i)),
+      output);
   }
 
   // repeated .chrome_lang_id.TaskInput input = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->input_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
-      6, this->input(static_cast<int>(i)), output);
+      6,
+      this->input(static_cast<int>(i)),
+      output);
   }
 
   // repeated .chrome_lang_id.TaskOutput output = 7;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->output_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
-      7, this->output(static_cast<int>(i)), output);
+      7,
+      this->output(static_cast<int>(i)),
+      output);
   }
 
   output->WriteRaw(_internal_metadata_.unknown_fields().data(),
@@ -1804,9 +1719,7 @@ size_t TaskSpec::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -1858,14 +1771,15 @@ void TaskSpec::Swap(TaskSpec* other) {
 }
 void TaskSpec::InternalSwap(TaskSpec* other) {
   using std::swap;
-  parameter_.InternalSwap(&other->parameter_);
-  input_.InternalSwap(&other->input_);
-  output_.InternalSwap(&other->output_);
-  task_name_.Swap(&other->task_name_);
-  task_type_.Swap(&other->task_type_);
+  CastToBase(&parameter_)->InternalSwap(CastToBase(&other->parameter_));
+  CastToBase(&input_)->InternalSwap(CastToBase(&other->input_));
+  CastToBase(&output_)->InternalSwap(CastToBase(&other->output_));
+  task_name_.Swap(&other->task_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  task_type_.Swap(&other->task_type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::std::string TaskSpec::GetTypeName() const {
@@ -1875,5 +1789,24 @@ void TaskSpec::InternalSwap(TaskSpec* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace chrome_lang_id
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::TaskInput_Part* Arena::CreateMaybeMessage< ::chrome_lang_id::TaskInput_Part >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::TaskInput_Part >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::TaskInput* Arena::CreateMaybeMessage< ::chrome_lang_id::TaskInput >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::TaskInput >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::TaskOutput* Arena::CreateMaybeMessage< ::chrome_lang_id::TaskOutput >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::TaskOutput >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::TaskSpec_Parameter* Arena::CreateMaybeMessage< ::chrome_lang_id::TaskSpec_Parameter >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::TaskSpec_Parameter >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::TaskSpec* Arena::CreateMaybeMessage< ::chrome_lang_id::TaskSpec >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::TaskSpec >(arena);
+}
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)

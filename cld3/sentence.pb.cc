@@ -7,7 +7,6 @@
 
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/port.h>
-#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
@@ -16,6 +15,10 @@
 #include "third_party/protobuf/version.h"
 #endif
 // @@protoc_insertion_point(includes)
+
+namespace protobuf_sentence_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_sentence_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Token;
+}  // namespace protobuf_sentence_2eproto
 namespace chrome_lang_id {
 class SentenceDefaultTypeInternal {
  public:
@@ -29,15 +32,9 @@ class TokenDefaultTypeInternal {
 } _Token_default_instance_;
 }  // namespace chrome_lang_id
 namespace protobuf_sentence_2eproto {
-void InitDefaultsSentenceImpl() {
+static void InitDefaultsSentence() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  protobuf_sentence_2eproto::InitDefaultsToken();
   {
     void* ptr = &::chrome_lang_id::_Sentence_default_instance_;
     new (ptr) ::chrome_lang_id::Sentence();
@@ -46,19 +43,13 @@ void InitDefaultsSentenceImpl() {
   ::chrome_lang_id::Sentence::InitAsDefaultInstance();
 }
 
-void InitDefaultsSentence() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsSentenceImpl);
-}
+::google::protobuf::internal::SCCInfo<1> scc_info_Sentence =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSentence}, {
+      &protobuf_sentence_2eproto::scc_info_Token.base,}};
 
-void InitDefaultsTokenImpl() {
+static void InitDefaultsToken() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::chrome_lang_id::_Token_default_instance_;
     new (ptr) ::chrome_lang_id::Token();
@@ -67,9 +58,12 @@ void InitDefaultsTokenImpl() {
   ::chrome_lang_id::Token::InitAsDefaultInstance();
 }
 
-void InitDefaultsToken() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsTokenImpl);
+::google::protobuf::internal::SCCInfo<0> scc_info_Token =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsToken}, {}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Sentence.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Token.base);
 }
 
 }  // namespace protobuf_sentence_2eproto
@@ -108,9 +102,8 @@ const int Sentence::kTokenFieldNumber;
 
 Sentence::Sentence()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_sentence_2eproto::InitDefaultsSentence();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_sentence_2eproto::scc_info_Sentence.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.Sentence)
 }
@@ -118,7 +111,6 @@ Sentence::Sentence(const Sentence& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      _cached_size_(0),
       token_(from.token_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   _extensions_.MergeFrom(from._extensions_);
@@ -134,7 +126,6 @@ Sentence::Sentence(const Sentence& from)
 }
 
 void Sentence::SharedCtor() {
-  _cached_size_ = 0;
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -150,22 +141,13 @@ void Sentence::SharedDtor() {
 }
 
 void Sentence::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const Sentence& Sentence::default_instance() {
-  ::protobuf_sentence_2eproto::InitDefaultsSentence();
+  ::google::protobuf::internal::InitSCC(&protobuf_sentence_2eproto::scc_info_Sentence.base);
   return *internal_default_instance();
 }
 
-Sentence* Sentence::New(::google::protobuf::Arena* arena) const {
-  Sentence* n = new Sentence;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void Sentence::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.Sentence)
@@ -178,12 +160,10 @@ void Sentence::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!id_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*id_.UnsafeRawStringPointer())->clear();
+      id_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!text_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*text_.UnsafeRawStringPointer())->clear();
+      text_.ClearNonDefaultToEmptyNoArena();
     }
   }
   _has_bits_.Clear();
@@ -202,7 +182,7 @@ bool Sentence::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.Sentence)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -234,7 +214,8 @@ bool Sentence::MergePartialFromCodedStream(
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(input, add_token()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_token()));
         } else {
           goto handle_unusual;
         }
@@ -290,7 +271,9 @@ void Sentence::SerializeWithCachedSizes(
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->token_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessage(
-      3, this->token(static_cast<int>(i)), output);
+      3,
+      this->token(static_cast<int>(i)),
+      output);
   }
 
   // Extension range [1000, 536870912)
@@ -338,9 +321,7 @@ size_t Sentence::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -393,12 +374,13 @@ void Sentence::Swap(Sentence* other) {
 }
 void Sentence::InternalSwap(Sentence* other) {
   using std::swap;
-  token_.InternalSwap(&other->token_);
-  id_.Swap(&other->id_);
-  text_.Swap(&other->text_);
+  CastToBase(&token_)->InternalSwap(CastToBase(&other->token_));
+  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  text_.Swap(&other->text_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
   _extensions_.Swap(&other->_extensions_);
 }
 
@@ -424,17 +406,15 @@ const int Token::kBreakLevelFieldNumber;
 
 Token::Token()
   : ::google::protobuf::MessageLite(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_sentence_2eproto::InitDefaultsToken();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_sentence_2eproto::scc_info_Token.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:chrome_lang_id.Token)
 }
 Token::Token(const Token& from)
   : ::google::protobuf::MessageLite(),
       _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      _cached_size_(0) {
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   _extensions_.MergeFrom(from._extensions_);
   word_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -460,7 +440,6 @@ Token::Token(const Token& from)
 }
 
 void Token::SharedCtor() {
-  _cached_size_ = 0;
   word_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   tag_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   category_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -485,22 +464,13 @@ void Token::SharedDtor() {
 }
 
 void Token::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const Token& Token::default_instance() {
-  ::protobuf_sentence_2eproto::InitDefaultsToken();
+  ::google::protobuf::internal::InitSCC(&protobuf_sentence_2eproto::scc_info_Token.base);
   return *internal_default_instance();
 }
 
-Token* Token::New(::google::protobuf::Arena* arena) const {
-  Token* n = new Token;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void Token::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_lang_id.Token)
@@ -512,20 +482,16 @@ void Token::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(!word_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*word_.UnsafeRawStringPointer())->clear();
+      word_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(!tag_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*tag_.UnsafeRawStringPointer())->clear();
+      tag_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(!category_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*category_.UnsafeRawStringPointer())->clear();
+      category_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000008u) {
-      GOOGLE_DCHECK(!label_.IsDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited()));
-      (*label_.UnsafeRawStringPointer())->clear();
+      label_.ClearNonDefaultToEmptyNoArena();
     }
   }
   if (cached_has_bits & 240u) {
@@ -551,7 +517,7 @@ bool Token::MergePartialFromCodedStream(
       &unknown_fields_output, false);
   // @@protoc_insertion_point(parse_start:chrome_lang_id.Token)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -846,9 +812,7 @@ size_t Token::ByteSizeLong() const {
 
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -921,17 +885,20 @@ void Token::Swap(Token* other) {
 }
 void Token::InternalSwap(Token* other) {
   using std::swap;
-  word_.Swap(&other->word_);
-  tag_.Swap(&other->tag_);
-  category_.Swap(&other->category_);
-  label_.Swap(&other->label_);
+  word_.Swap(&other->word_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  tag_.Swap(&other->tag_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  category_.Swap(&other->category_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  label_.Swap(&other->label_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(start_, other->start_);
   swap(end_, other->end_);
   swap(head_, other->head_);
   swap(break_level_, other->break_level_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
   _extensions_.Swap(&other->_extensions_);
 }
 
@@ -942,5 +909,15 @@ void Token::InternalSwap(Token* other) {
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace chrome_lang_id
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::Sentence* Arena::CreateMaybeMessage< ::chrome_lang_id::Sentence >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::Sentence >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::chrome_lang_id::Token* Arena::CreateMaybeMessage< ::chrome_lang_id::Token >(Arena* arena) {
+  return Arena::CreateInternal< ::chrome_lang_id::Token >(arena);
+}
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
