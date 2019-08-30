@@ -20,9 +20,8 @@ const Result find_language(CLanguageIdentifier li, char *data, int length) {
   std::string text(data, length);
   const NNetLanguageIdentifier::Result res = lang_id->FindLanguage(text);
   Result out;
-  // These strings are statically allocated, so we can do this c_str() without
-  // worrying about them going off the stack.
-  out.language = res.language.c_str();
+  out.language = new char[res.language.length() + 1];
+  strcpy(out.language, res.language.c_str());
   out.len_language = res.language.length();
   out.probability = res.probability;
   out.is_reliable = res.is_reliable;
