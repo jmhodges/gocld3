@@ -14,10 +14,10 @@ jobs:
     steps:
 
     - name: Download protobuf
-      run: curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.10.0/protobuf-all-3.10.0.tar.gz && tar xzvf protobuf-all-3.10.0.tar.gz
+      run: curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.3/protobuf-all-3.11.3.tar.gz && tar xzvf protobuf-all-3.11.3.tar.gz
 
     - name: Install protobuf
-      run: cd protobuf-3.10.0 && ./configure DIST_LANG=cpp --prefix=/usr && make && sudo make install && sudo ldconfig
+      run: cd protobuf-3.11.3 && ./configure DIST_LANG=cpp --prefix=/usr && make && sudo make install && sudo ldconfig
 
     - name: Check out code
       uses: actions/checkout@v1
