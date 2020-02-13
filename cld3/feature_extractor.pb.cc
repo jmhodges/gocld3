@@ -164,14 +164,16 @@ const char* Parameter::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // optional string name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_name(), ptr, ctx);
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // optional string value = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_value(), ptr, ctx);
+          auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -196,7 +198,7 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Parameter::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* Parameter::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_lang_id.Parameter)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -409,14 +411,16 @@ const char* FeatureFunctionDescriptor::_InternalParse(const char* ptr, ::PROTOBU
       // required string type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_type(), ptr, ctx);
+          auto str = _internal_mutable_type();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // optional string name = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_name(), ptr, ctx);
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -473,7 +477,7 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FeatureFunctionDescriptor::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* FeatureFunctionDescriptor::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_lang_id.FeatureFunctionDescriptor)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -494,24 +498,24 @@ failure:
 
   // optional int32 argument = 3 [default = 0];
   if (cached_has_bits & 0x00000004u) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_argument(), target);
   }
 
   // repeated .chrome_lang_id.Parameter parameter = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_parameter_size()); i < n; i++) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(4, this->_internal_parameter(i), target, stream);
+      InternalWriteMessage(4, this->_internal_parameter(i), target, stream);
   }
 
   // repeated .chrome_lang_id.FeatureFunctionDescriptor feature = 7;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_feature_size()); i < n; i++) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(7, this->_internal_feature(i), target, stream);
+      InternalWriteMessage(7, this->_internal_feature(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -527,7 +531,7 @@ size_t FeatureFunctionDescriptor::ByteSizeLong() const {
   size_t total_size = 0;
 
   // required string type = 1;
-  if (has_type()) {
+  if (_internal_has_type()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_type());
@@ -616,7 +620,7 @@ void FeatureFunctionDescriptor::CopyFrom(const FeatureFunctionDescriptor& from) 
 
 bool FeatureFunctionDescriptor::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(this->feature())) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(feature_)) return false;
   return true;
 }
 
@@ -732,7 +736,7 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FeatureExtractorDescriptor::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* FeatureExtractorDescriptor::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_lang_id.FeatureExtractorDescriptor)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -741,9 +745,9 @@ failure:
   // repeated .chrome_lang_id.FeatureFunctionDescriptor feature = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_feature_size()); i < n; i++) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(1, this->_internal_feature(i), target, stream);
+      InternalWriteMessage(1, this->_internal_feature(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -801,7 +805,7 @@ void FeatureExtractorDescriptor::CopyFrom(const FeatureExtractorDescriptor& from
 }
 
 bool FeatureExtractorDescriptor::IsInitialized() const {
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(this->feature())) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(feature_)) return false;
   return true;
 }
 
