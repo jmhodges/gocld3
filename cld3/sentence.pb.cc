@@ -216,14 +216,16 @@ const char* Sentence::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // optional string id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_id(), ptr, ctx);
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // optional string text = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_text(), ptr, ctx);
+          auto str = _internal_mutable_text();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -266,7 +268,7 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Sentence::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* Sentence::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_lang_id.Sentence)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -288,13 +290,13 @@ failure:
   // repeated .chrome_lang_id.Token token = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_token_size()); i < n; i++) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(3, this->_internal_token(i), target, stream);
+      InternalWriteMessage(3, this->_internal_token(i), target, stream);
   }
 
   // Extension range [1000, 536870912)
-  target = _extensions_.InternalSerializeWithCachedSizesToArray(
+  target = _extensions_._InternalSerialize(
       1000, 536870912, target, stream);
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -387,7 +389,7 @@ bool Sentence::IsInitialized() const {
     return false;
   }
 
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(this->token())) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(token_)) return false;
   return true;
 }
 
@@ -552,7 +554,8 @@ const char* Token::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // required string word = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_word(), ptr, ctx);
+          auto str = _internal_mutable_word();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -583,21 +586,24 @@ const char* Token::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       // optional string tag = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_tag(), ptr, ctx);
+          auto str = _internal_mutable_tag();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // optional string category = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_category(), ptr, ctx);
+          auto str = _internal_mutable_category();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // optional string label = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(_internal_mutable_label(), ptr, ctx);
+          auto str = _internal_mutable_label();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -640,7 +646,7 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Token::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* Token::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_lang_id.Token)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -655,19 +661,19 @@ failure:
 
   // required int32 start = 2;
   if (cached_has_bits & 0x00000010u) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_start(), target);
   }
 
   // required int32 end = 3;
   if (cached_has_bits & 0x00000020u) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_end(), target);
   }
 
   // optional int32 head = 4 [default = -1];
   if (cached_has_bits & 0x00000040u) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_head(), target);
   }
 
@@ -691,13 +697,13 @@ failure:
 
   // optional .chrome_lang_id.Token.BreakLevel break_level = 8 [default = SPACE_BREAK];
   if (cached_has_bits & 0x00000080u) {
-    stream->EnsureSpace(&target);
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       8, this->_internal_break_level(), target);
   }
 
   // Extension range [1000, 536870912)
-  target = _extensions_.InternalSerializeWithCachedSizesToArray(
+  target = _extensions_._InternalSerialize(
       1000, 536870912, target, stream);
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -712,21 +718,21 @@ size_t Token::RequiredFieldsByteSizeFallback() const {
 // @@protoc_insertion_point(required_fields_byte_size_fallback_start:chrome_lang_id.Token)
   size_t total_size = 0;
 
-  if (has_word()) {
+  if (_internal_has_word()) {
     // required string word = 1;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_word());
   }
 
-  if (has_start()) {
+  if (_internal_has_start()) {
     // required int32 start = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_start());
   }
 
-  if (has_end()) {
+  if (_internal_has_end()) {
     // required int32 end = 3;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
