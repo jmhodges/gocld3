@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+      - test_*
+      - test-*
   pull_request:
     branches:
       - master
@@ -13,14 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Download protobuf
-      run: curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.11.3/protobuf-all-3.11.3.tar.gz && tar xzvf protobuf-all-3.11.3.tar.gz
-
-    - name: Install protobuf
-      run: cd protobuf-3.11.3 && ./configure DIST_LANG=cpp --prefix=/usr && make && sudo make install && sudo ldconfig
-
     - name: Check out code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
+
+    - name: Setup protoc
+      uses: arduino/setup-protoc@v1.1.2
 
     - name: Read Go versions
       run: echo "##[set-output name=go_version;]$(cat .github/versions/go)"
