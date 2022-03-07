@@ -20,7 +20,7 @@ jobs:
       run: cd protobuf-3.17.3 && ./configure DIST_LANG=cpp --prefix=/usr && make && sudo make install && sudo ldconfig
 
     - name: Check out code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
 
     - name: Read Go versions
       run: echo "##[set-output name=go_version;]$(cat .github/versions/go)"
