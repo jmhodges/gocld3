@@ -14,16 +14,17 @@ Documentation is available on [GoDoc](https://godoc.org/github.com/jmhodges/gocl
 ### Example
 
 ```go
-	langId, err := cld3.NewLanguageIdentifier(0, 512)
+	cld, err := cld3.NewDefault()
 	if err != nil {
 		fmt.Println("whoops, couldn't create a new LanguageIdentifier:", err)
 	}
-	defer cld3.FreeLanguageIdentifier(langId)
-	res := langId.FindLanguage("Hey, this is an english sentence")
+	defer cld.Free()
+
+	res := cld.FindLanguage("Hey, this is an english sentence")
 	if res.IsReliable {
 		fmt.Println("pretty sure we've got text written in", res.Language)
 	}
-	res = langId.FindLanguage("Muy bien, gracias.")
+	res = cld.FindLanguage("Muy bien, gracias.")
 	if res.IsReliable {
 		fmt.Println("ah, and this one is", res.Language)
 	}

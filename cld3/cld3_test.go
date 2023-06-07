@@ -6,11 +6,11 @@ import (
 )
 
 func TestOkay(t *testing.T) {
-	langId, err := NewLanguageIdentifier(0, 1000)
+	langId, err := New(0, 1000)
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer FreeLanguageIdentifier(langId)
+	defer langId.Free()
 	res := langId.FindLanguage("Hey, this is an english sentence")
 	if res.Language != "en" {
 		t.Errorf("Language: want \"en\", got %#v", res.Language)
@@ -30,15 +30,30 @@ func TestOkay(t *testing.T) {
 		{2, 1, ErrMaxSmallerOrEqualToMin},
 	}
 	for _, c := range cases {
-		_, err := NewLanguageIdentifier(c.min, c.max)
+		_, err := New(c.min, c.max)
 		if err != c.err {
 			t.Errorf("error incorrect: want %s, got %s", c.err, err)
 		}
 	}
 }
 
+func TestFindTopNMostFreqLangs(t *testing.T) {
+	langId, err := New(0, 1000)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer langId.Free()
+	res := langId.FindTopNMostFreqLangs("Hey, this is an english sentence 这是一段中文 ja こんいちは", 3)
+	if res == nil {
+		t.Fatal("nil result")
+	}
+	for _, r := range res {
+		fmt.Println(r)
+	}
+}
+
 func ExampleBasic() {
-	langId, err := NewLanguageIdentifier(0, 512)
+	langId, err := New(0, 512)
 	if err != nil {
 		fmt.Println("whoops, couldn't create a new LanguageIdentifier:", err)
 	}
@@ -50,7 +65,7 @@ func ExampleBasic() {
 	if res.IsReliable {
 		fmt.Println("ah, and this one is", res.Language)
 	}
-	FreeLanguageIdentifier(langId)
+	defer langId.Free()
 	// Output:
 	// pretty sure we've got text written in en
 	// ah, and this one is es

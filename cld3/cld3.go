@@ -29,12 +29,16 @@ var (
 	ErrMaxSmallerOrEqualToMin = errors.New("cld3: maxNumBytes passed to NewLanguageIdentifier must be larger than minNumBytes")
 )
 
-// NewLanguageIdentifier returns a LanguageIdentifier. minNumBytes is the
+func NewDefault() LanguageIdentifier {
+	return LanguageIdentifier{C.new_language_identifier_default()}
+}
+
+// New returns a LanguageIdentifier. minNumBytes is the
 // minimum numbers of bytes to consider in the text before making a decision and
 // maxNumBytes is the maximum of the same. Chromium uses 0 and 512, respectively
 // for its i18n work. LanguageIdentifier must be deallocated explicitly with
 // FreeLanguageIdentifier.
-func NewLanguageIdentifier(minNumBytes, maxNumBytes int) (LanguageIdentifier, error) {
+func New(minNumBytes, maxNumBytes int) (LanguageIdentifier, error) {
 	// We do these checks even though they exist in NNetLanguageIdentifier's
 	// constructor because the CLD3_CHECK calls cause inscrutable "illegal
 	// instruction" crashes if they are violated.
@@ -50,7 +54,7 @@ func NewLanguageIdentifier(minNumBytes, maxNumBytes int) (LanguageIdentifier, er
 	return LanguageIdentifier{C.new_language_identifier(C.int(minNumBytes), C.int(maxNumBytes))}, nil
 }
 
-func FreeLanguageIdentifier(li LanguageIdentifier) {
+func (li LanguageIdentifier) Free() {
 	C.free_language_identifier(li.li)
 }
 
@@ -66,6 +70,35 @@ func (li LanguageIdentifier) FindLanguage(text string) Result {
 	r.IsReliable = bool(res.is_reliable)
 	r.Proportion = float32(res.proportion)
 	return r
+}
+
+func (li LanguageIdentifier) FindTopNMostFreqLangs(text string, num int) []Result {
+	cs := C.CString(text)
+	defer C.free(unsafe.Pointer(cs))
+	// Declare a variable to store the size of the results
+	var outSize C.int
+
+	cResults := C.find_topn_most_freq_langs(li.li, cs, C.int(len(text)), C.int(num), &outSize)
+
+	if int(outSize) == 0 {
+		return nil
+	}
+
+	// Convert the C results to Go slice
+	goResults := make([]Result, int(outSize))
+
+	// Convert the C results to Go slice
+	for i := 0; i < int(outSize); i++ {
+		// Access each element using pointer arithmetic and type casting
+		result := *(*C.Result)(unsafe.Pointer(uintptr(unsafe.Pointer(cResults)) + uintptr(i)*unsafe.Sizeof(C.Result{})))
+
+		goResults[i].Language = C.GoStringN(result.language, result.len_language)
+		goResults[i].Probability = float32(result.probability)
+		goResults[i].IsReliable = bool(result.is_reliable)
+		goResults[i].Proportion = float32(result.proportion)
+	}
+
+	return goResults
 }
 
 type Result struct {
